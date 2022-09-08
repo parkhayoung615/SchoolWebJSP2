@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/menu.jsp" %>
 
-	<p><%= login.getMemberName() %>님 로그인 되었습니다.</p>
+<%
+	String msg = (String)session.getAttribute("quit");
+%>
+
+<h2>회원탈퇴 결과 안내</h2>
+<p> <%= msg %></p>
 
 <%@ include file="/footer.jsp" %>

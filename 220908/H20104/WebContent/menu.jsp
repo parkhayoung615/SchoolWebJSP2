@@ -1,3 +1,4 @@
+<%@page import="vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -121,7 +122,7 @@
 <%
 			if(login == null) {
 %>
-				<a href="/index.jsp" id="intro">로그인</a>
+				<a href="/login/login.jsp" id="intro">로그인</a>
 				<a href="/book/searchBook.jsp" id="search">도서 검색</a>
 				<a id="rental">도서대출현황</a>
 				<a id="quit">회원탈퇴</a>
@@ -136,4 +137,4 @@
 			} 
 %>
 			</div>
-			<div class="content"></div>
+			<div class="content">

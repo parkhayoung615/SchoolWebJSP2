@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../menu.jsp" %>
+<%@ include file="/menu.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,4 +56,4 @@
 			<a href="/member/register.jsp">회원가입</a>
 	</div>
 </form>
-<%@ include file="../footer.jsp" %>
+<%@ include file="/footer.jsp" %>

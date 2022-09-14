@@ -76,7 +76,7 @@ public class MemberDAO {
 		int result = 0;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "DELETE FROM lib_member WEHRE member_id=?";
+		String sql = "DELETE FROM lib_member WHERE member_id=?";
 		
 		try {
 			conn = JdbcUtil.getConnection();

@@ -6,12 +6,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import dao.BookDAO;
+import dto.BookDTO;
 
 
 @WebServlet("/bs")
@@ -28,6 +32,18 @@ public class BookServlet extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
+		BookDAO bookDAO = new BookDAO();
+		ArrayList<BookDTO> list = bookDAO.select();
+		
+		for(BookDTO dto : list) {
+			int bookId = dto.getBookId();
+			String bookName = dto.getBookName();
+			String bookLoc = dto.getBookLoc();
+			
+			out.println(bookId + ", " + bookName + ", " + bookLoc + "<br>");
+		}
+		
+		/*
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 		String id = "systme";
@@ -62,7 +78,7 @@ public class BookServlet extends HttpServlet {
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
-		}
+		} */
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
